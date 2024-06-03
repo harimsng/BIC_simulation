@@ -36,6 +36,9 @@ public:
   void SetModuleNum(G4int MuduleNum) { fMuduleNum = MuduleNum; }
   G4int GetModuleNum() const { return fMuduleNum; }
 
+  void SetisLeft(G4int isLeft) { fisLeft = isLeft; }
+  G4int GetisLeft() const { return fisLeft; }
+
   void SetTowerXY(DRsimInterface::hitXY xy) { fTowerXY = xy; }
   DRsimInterface::hitXY GetTowerXY() const { return fTowerXY; }
 
@@ -59,6 +62,7 @@ private:
   G4int fPhotons;
   G4ThreeVector fSiPMpos;
   G4int fMuduleNum;
+  G4int fisLeft;
   DRsimInterface::hitXY fTowerXY;
   G4float fInnerR;
   G4float fTowerH;

@@ -41,7 +41,6 @@ private:
   G4OpticalSurface* FindSurface(G4String surfName) { return fMaterials->GetOpticalSurface(surfName); }
 
   void ModuleBuild(G4LogicalVolume* ModuleLogical_[], G4LogicalVolume* PMTGLogical_[], G4LogicalVolume* PMTfilterLogical_[], G4LogicalVolume* PMTcellLogical_[], G4LogicalVolume* PMTcathLogical_[],
-                    G4LogicalVolume* ReflectorMirrorLogical_[],
                     std::vector<G4LogicalVolume*> fiberUnitIntersection_[], std::vector<G4LogicalVolume*> fiberCladIntersection_[], std::vector<G4LogicalVolume*> fiberCoreIntersection_[], 
                     std::vector<DRsimInterface::DRsimModuleProperty>& towerProps_);
 
@@ -69,10 +68,8 @@ private:
 
   G4double PMTT;
   G4double filterT;
-  G4double reflectorT;
 
   G4bool doFiber;
-  G4bool doReflector;
   G4bool doPMT;
 
   dimensionCalc* dimCalc;
@@ -80,14 +77,13 @@ private:
   char name[20];
   G4String moduleName;
   G4Box* module;
-  G4Box* reflector;
   G4Box* pmtg;
+  G4Box* pmtg1;
   G4Box* pmtcath;
 
   G4Box* fiberUnit;
   G4Tubs* fiberClad;
   G4Tubs* fiberCoreS;
-  G4Tubs* fiberCoreC;
   
   G4VSolid* tfiberUnitIntersection;
   G4VSolid* tfiberCladIntersection;
@@ -99,7 +95,6 @@ private:
   G4LogicalVolume* PMTcathLogical[100];
   G4LogicalVolume* PMTcellLogical[100];
   G4LogicalVolume* PMTfilterLogical[100];
-  G4LogicalVolume* ReflectorMirrorLogical[100];
 
   vector<G4LogicalVolume*> fiberUnitIntersection[100];
   vector<G4LogicalVolume*> fiberCladIntersection[100];
@@ -107,18 +102,6 @@ private:
 
   DRsimInterface::hitXY fTowerXY;
   std::vector<DRsimInterface::DRsimModuleProperty> fModuleProp;
-
-  G4double clad_C_rMin;
-  G4double clad_C_rMax;
-  G4double clad_C_Dz  ;
-  G4double clad_C_Sphi;
-  G4double clad_C_Dphi;
-
-  G4double core_C_rMin;
-  G4double core_C_rMax;
-  G4double core_C_Dz  ;
-  G4double core_C_Sphi;
-  G4double core_C_Dphi;
 
   G4double clad_S_rMin;
   G4double clad_S_rMax;
@@ -139,7 +122,7 @@ private:
   G4LogicalVolume* worldLogical;
 
   G4String setModuleName(int i) {
-    return "Module" + std::to_string(i);
+    return std::to_string(i);
   }
 };
 

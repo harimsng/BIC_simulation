@@ -10,7 +10,7 @@ class G4VPhysicalVolume;
 
 class DRsimFilterParameterisation : public G4VPVParameterisation {
 public:
-  DRsimFilterParameterisation(const G4int numx, const G4int numy);
+  DRsimFilterParameterisation(const G4int numx, const G4int numy, const G4double moduleH, const G4double moduleW);
   virtual ~DRsimFilterParameterisation();
 
   virtual void ComputeTransformation(const G4int copyNo, G4VPhysicalVolume* physVol) const;
@@ -18,8 +18,6 @@ public:
 private:
   std::vector<G4double> fXFilter;
   std::vector<G4double> fYFilter;
-  G4int fNumx;
-  G4int fNumy;
 };
 
 #endif

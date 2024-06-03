@@ -28,7 +28,8 @@ void DRsimEventAction::BeginOfEventAction(const G4Event*) {
 
   G4SDManager* sdManager = G4SDManager::GetSDMpointer();
   for (int i = 0; i < DRsimDetectorConstruction::fNofModules; i++) {
-    fSiPMCollID.push_back(sdManager->GetCollectionID("ModuleC"+std::to_string(i)));
+    fSiPMCollID.push_back(sdManager->GetCollectionID("ModuleC"+std::to_string(2*i)));
+    fSiPMCollID.push_back(sdManager->GetCollectionID("ModuleC"+std::to_string(2*i+1)));
   }
 
   fEventData = new DRsimInterface::DRsimEventData();
@@ -97,6 +98,7 @@ void DRsimEventAction::fillHits(DRsimSiPMHit* hit) {
   sipmData.SiPMnum = hit->GetSiPMnum();
   sipmData.x = hit->GetSiPMXY().first;
   sipmData.y = hit->GetSiPMXY().second;
+  sipmData.isleft = hit->GetisLeft();
   sipmData.pos = std::make_tuple(hit->GetSiPMpos().x(),hit->GetSiPMpos().y(),hit->GetSiPMpos().z());
   sipmData.timeStruct = hit->GetTimeStruct();
   sipmData.wavlenSpectrum = hit->GetWavlenSpectrum();
