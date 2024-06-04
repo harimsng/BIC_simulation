@@ -79,15 +79,6 @@ void DRsimPrimaryGeneratorAction::GeneratePrimaries(G4Event* event) {
     return;
   }
 
-  if (fUseHepMC) {
-    G4AutoLock lock(&DRsimPrimaryGeneratorMutex);
-    DRsimRunAction::sHepMCreader->GeneratePrimaryVertex(event);
-    sIdxEvt = sNumEvt;
-    sNumEvt++;
-
-    return;
-  }
-
   G4double x = (G4UniformRand()-0.5)*fRandX + fX_0;
   G4double y = 0 + fY_0;
   G4double z = (G4UniformRand()-0.5)*fRandZ + fZ_0;

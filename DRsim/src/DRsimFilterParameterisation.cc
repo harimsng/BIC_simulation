@@ -1,4 +1,3 @@
-#include "RecoInterface.h"
 #include "DRsimFilterParameterisation.hh"
 #include "DRsimCellParameterisation.hh"
 

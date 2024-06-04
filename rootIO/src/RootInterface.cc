@@ -1,6 +1,5 @@
 #include "RootInterface.h"
 #include "DRsimInterface.h"
-#include "RecoInterface.h"
 
 template <typename T>
 RootInterface<T>::RootInterface(const std::string& filename, bool key)
@@ -74,4 +73,3 @@ TTree* RootInterface<T>::getTree() {
 }
 
 template class RootInterface<DRsimInterface::DRsimEventData>;
-template class RootInterface<RecoInterface::RecoEventData>;
