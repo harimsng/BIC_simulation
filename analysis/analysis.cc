@@ -21,21 +21,20 @@ int main(int argc, char* argv[]) {
   TString filename = argv[1];
   float low = std::stof(argv[2]);
   float high = std::stof(argv[3]);
-  TString outputname = argv[4];
 
   gStyle->SetOptFit(1);
 
-  RootInterface<DRsimInterface::DRsimEventData>* drInterface = new RootInterface<DRsimInterface::DRsimEventData>(std::string(filename), true);
+  RootInterface<DRsimInterface::DRsimEventData>* drInterface = new RootInterface<DRsimInterface::DRsimEventData>(std::string(filename + ".root"), true);
   drInterface->set("DRsim","DRsimEventData");
   //drInterface->GetChain("DRsim");
 
   TH1F* tEdep = new TH1F("totEdep",";MeV;Evt",100,low*1000.,high*1000.);
   tEdep->Sumw2(); tEdep->SetLineColor(kRed); tEdep->SetLineWidth(2);
-  TH1F* tHit_S = new TH1F("Hit_S",";# of p.e.;Evt",200,0,40000);
+  TH1F* tHit_S = new TH1F("Hit_S",";# of p.e.;Evt",200,12000*low*2,12000*high*2);
   tHit_S->Sumw2(); tHit_S->SetLineColor(kRed); tHit_S->SetLineWidth(2);
-  TH1F* tHit_S_left = new TH1F("Hit_S_left",";# of p.e.;Evt",200,0,40000);
+  TH1F* tHit_S_left = new TH1F("Hit_S_left",";# of p.e.;Evt",200,12000*low,12000*high);
   tHit_S_left->Sumw2(); tHit_S_left->SetLineColor(kRed); tHit_S_left->SetLineWidth(2);
-  TH1F* tHit_S_right = new TH1F("Hit_S_right",";# of p.e.;Evt",200,0,40000);
+  TH1F* tHit_S_right = new TH1F("Hit_S_right",";# of p.e.;Evt",200,12000*low,12000*high);
   tHit_S_right->Sumw2(); tHit_S_right->SetLineColor(kRed); tHit_S_right->SetLineWidth(2);
   TH1F* tP_leak = new TH1F("Pleak",";MeV;Evt",100,0.,1000.*high);
   tP_leak->Sumw2(); tP_leak->SetLineWidth(2);
