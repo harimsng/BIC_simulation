@@ -122,24 +122,24 @@ int main(int argc, char* argv[]) {
 
   TCanvas* c = new TCanvas("c","");
 
-  tEdep->Draw("Hist"); c->SaveAs(outputname+"_Edep.png");
+  tEdep->Draw("Hist"); c->SaveAs(filename+"_Edep.png");
 
   c->SetLogy(1);
-  tP_leak->Draw("Hist"); c->SaveAs(outputname+"_Pleak.png");
-  tP_leak_nu->Draw("Hist"); c->SaveAs(outputname+"_Pleak_nu.png");
+  tP_leak->Draw("Hist"); c->SaveAs(filename+"_Pleak.png");
+  tP_leak_nu->Draw("Hist"); c->SaveAs(filename+"_Pleak_nu.png");
   c->SetLogy(0);
 
-  tHit_S->Draw("Hist"); c->SaveAs(outputname+"_nHitpEventS.pdf");
-  tHit_S_left->Draw("Hist"); c->SaveAs(outputname+"_nHitpEventS_left.pdf");
-  tHit_S_right->Draw("Hist"); c->SaveAs(outputname+"_nHitpEventS_right.pdf");
+  tHit_S->Draw("Hist"); c->SaveAs(filename+"_nHitpEventS.pdf");
+  tHit_S_left->Draw("Hist"); c->SaveAs(filename+"_nHitpEventS_left.pdf");
+  tHit_S_right->Draw("Hist"); c->SaveAs(filename+"_nHitpEventS_right.pdf");
 
-  t2DhitS->Draw("COLZ"); c->SaveAs(outputname+"_n2DHitS.png");
+  t2DhitS->Draw("COLZ"); c->SaveAs(filename+"_n2DHitS.png");
 
-  tT_S->Draw("Hist"); c->SaveAs(outputname+"_tS.png");
-  tT_S_left->Draw("Hist"); c->SaveAs(outputname+"_tS_left.png");
-  tT_S_right->Draw("Hist"); c->SaveAs(outputname+"_tS_right.png");
-  tWav_S->Draw("Hist"); c->SaveAs(outputname+"_wavS.png");
-  tWav_S_left->Draw("Hist"); c->SaveAs(outputname+"_wavS_left.png");
-  tWav_S_right->Draw("Hist"); c->SaveAs(outputname+"_wavS_right.png");
-  tNhit_S->Draw("Hist"); c->SaveAs(outputname+"_nhitS.png");
+  tT_S->Draw("Hist"); c->SaveAs(filename+"_tS.png");
+  tT_S_left->Draw("Hist"); c->SaveAs(filename+"_tS_left.png");
+  tT_S_right->Draw("Hist"); c->SaveAs(filename+"_tS_right.png");
+  tWav_S->Draw("Hist"); c->SaveAs(filename+"_wavS.png");
+  tWav_S_left->Draw("Hist"); c->SaveAs(filename+"_wavS_left.png");
+  tWav_S_right->Draw("Hist"); c->SaveAs(filename+"_wavS_right.png");
+  tNhit_S->Draw("Hist"); c->SaveAs(filename+"_nhitS.png");
 }
