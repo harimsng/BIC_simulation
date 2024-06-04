@@ -31,6 +31,7 @@ public:
 
     int count;
     int SiPMnum;
+    int isleft;
     int x;    // plate num
     int y;    // fiber num on the plate
     threeVector pos;
