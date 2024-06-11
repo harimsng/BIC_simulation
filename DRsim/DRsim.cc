@@ -49,11 +49,13 @@ int main(int argc, char** argv) {
   // physics module
   G4VModularPhysicsList* physicsList = new FTFP_BERT;
   G4OpticalPhysics* opticalPhysics = new G4OpticalPhysics();
+  G4OpticalParameters* opticalParameters = G4OpticalParameters::Instance();
+
   physicsList->RegisterPhysics(opticalPhysics);
-  opticalPhysics->Configure(kCerenkov, true);
-  opticalPhysics->Configure(kScintillation, true);
-  opticalPhysics->SetTrackSecondariesFirst(kCerenkov, true);
-  opticalPhysics->SetTrackSecondariesFirst(kScintillation, true);
+  opticalParameters->SetProcessActivation("Cerenkov", true);
+  opticalParameters->SetProcessActivation("Scintillation", true);
+  opticalParameters->SetCerenkovTrackSecondariesFirst(true);
+  opticalParameters->SetScintTrackSecondariesFirst(true);
   runManager->SetUserInitialization(physicsList);
 
   // User action initialization
