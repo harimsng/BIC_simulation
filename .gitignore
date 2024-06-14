@@ -1,0 +1,6 @@
+install*
+build
+*.cc
+*.o
+*.d
+*.pcm
