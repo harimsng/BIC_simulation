@@ -4,8 +4,9 @@ Repository for GEANT4 simulation &amp; analysis of BIC TB simulation.
 ## How-to
 ### Prerequisite
     
-Geant4 10.5.0 or 10.6.0 confirmed on MacOS 14.4.1
-Simulation on Geant4 with higher version produce invalid output. Recommend to use it only for geometry visualization.
+Geant4 10.5.0 or 10.6.0 confirmed on MacOS 14.4.1\
+Simulation on Geant4 with higher version produce invalid output.\
+Recommend to use it only for geometry visualization.
 
 #### For local installation
 Geant4 must be built with cmake option `-DGEANT4_INSTALL_DATA=ON` for simulation.
