@@ -2,7 +2,6 @@ project(analysis)
 
 find_package(ROOT REQUIRED)
 
-set(CMAKE_PREFIX_PATH /Users/skku_server/geant4dir/geant4-install)
 set(CMAKE_MACOSX_RPATH 1)
 list(APPEND CMAKE_INSTALL_RPATH ${CMAKE_PREFIX_PATH}/lib)
 list(APPEND CMAKE_INSTALL_RPATH /opt/homebrew/lib/root)

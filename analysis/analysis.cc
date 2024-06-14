@@ -23,7 +23,9 @@ int main(int argc, char* argv[]) {
 
   gStyle->SetOptFit(1);
 
-  RootInterface<DRsimInterface::DRsimEventData>* drInterface = new RootInterface<DRsimInterface::DRsimEventData>(std::string(filename + ".root"), true);
+  if (!filename.EndsWith(".root"))
+    filename = filename + ".root";
+  RootInterface<DRsimInterface::DRsimEventData>* drInterface = new RootInterface<DRsimInterface::DRsimEventData>(std::string(filename), true);
   drInterface->set("DRsim","DRsimEventData");
   //drInterface->GetChain("DRsim");
 

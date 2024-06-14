@@ -3,6 +3,7 @@ project(dual-readout)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_PREFIX_PATH "$ENV{Geant4_DIR}")
 
 # set(HEPMC_DIR "$ENV{HEPMC_DIR}")
 # set(PYTHIA_DIR "$ENV{PYTHIA_DIR}")

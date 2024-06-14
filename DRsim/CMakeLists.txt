@@ -2,11 +2,10 @@
 # Setup the project
 project(DRsim)
 
-set(CMAKE_PREFIX_PATH /Users/skku_server/geant4dir/geant4-install)
 set(CMAKE_MACOSX_RPATH 1)
 list(APPEND CMAKE_INSTALL_RPATH ${CMAKE_PREFIX_PATH}/lib)
-list(APPEND CMAKE_INSTALL_RPATH /opt/homebrew/lib/root)
-list(APPEND CMAKE_INSTALL_RPATH /Users/hseong/eic/DRC_generic_forEIC/install/lib)
+list(APPEND CMAKE_INSTALL_RPATH ${ROOT_DIR})
+list(APPEND CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 
 #----------------------------------------------------------------------------
 # Find Geant4 package, activating all available UI and Vis drivers by default
