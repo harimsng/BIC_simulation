@@ -13,13 +13,13 @@ Simulation on Geant4 with higher version produce invalid output.\
 Recommend to use it only for geometry visualization.
 
 #### For local installation
-Geant4 must be built with cmake option `-DGEANT4_INSTALL_DATA=ON` for simulation.
-There are options to enable visulization like `-DGEANT_USE_OPENGL_X11`, `-DGEANT_USE_QT` and more.
+Geant4 must be built with cmake option `-DGEANT4_INSTALL_DATA=ON` for simulation.\
+There are options to enable visulization like `-DGEANT_USE_OPENGL_X11`, `-DGEANT_USE_QT` and more.\
 For more information, Refer to https://geant4-userdoc.web.cern.ch/UsersGuides/InstallationGuide/html/
 \
-ROOT 6.30 confirmed on MacOS 14.4.1
-Other versions may work.
 \
+ROOT 6.30 confirmed on MacOS 14.4.1\
+Other versions may work.
 
 ### Compile
 
@@ -44,7 +44,7 @@ You can use below Geant4 commands to control visualization.
 `/vis/viewer/zoom N` N times magnification. (N can be less than 1)\
 `/vis/viewer/set/targetPoint X Y Z unit` set center coordinate of rotation and zoom. (unit: m, mm, ...)\
 `/vis/viewer/set/viewpointThetaPhi T P [unit]` rotate around target point.\
-`/control/execute run_ele.mac` execute external Geant4 macro.\
+`/control/execute run_ele.mac` execute external Geant4 macro.
 
 ### Analysis
 
