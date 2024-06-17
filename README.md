@@ -3,20 +3,23 @@ Repository for GEANT4 simulation &amp; analysis of BIC TB simulation.
 
 ## How-to
 ### Prerequisite
-    
+
+#### CentOS 7 & CVMFS
+Every dependencies can be found in CVMFS.
+
+#### MacOS or Other OS's
 Geant4 10.5.0 or 10.6.0 confirmed on MacOS 14.4.1\
 Simulation on Geant4 with higher version produce invalid output.\
 Recommend to use it only for geometry visualization.
 
 #### For local installation
 Geant4 must be built with cmake option `-DGEANT4_INSTALL_DATA=ON` for simulation.
-\
+There are options to enable visulization like `-DGEANT_USE_OPENGL_X11`, `-DGEANT_USE_QT` and more.
 For more information, Refer to https://geant4-userdoc.web.cern.ch/UsersGuides/InstallationGuide/html/
 \
 ROOT 6.30 confirmed on MacOS 14.4.1
 Other versions may work.
 \
-Other prerequisites not listed here can exists.
 
 ### Compile
 
