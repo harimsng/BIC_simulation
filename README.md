@@ -7,7 +7,7 @@ Repository for GEANT4 simulation &amp; analysis of BIC TB simulation.
 #### CentOS 7 & CVMFS
 Every dependencies can be found in CVMFS.
 
-#### MacOS or Other OS's
+#### MacOS and Other OS's
 Geant4 10.5.0 or 10.6.0 confirmed on MacOS 14.4.1\
 Simulation on Geant4 with higher version produce invalid output.\
 Recommend to use it only for geometry visualization.
